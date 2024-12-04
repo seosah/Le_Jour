@@ -65,14 +65,26 @@ $(function(){
       prevEl: ".swiper-button-prev",
     },
   });
+
+  $('.item_link').stop().animate({
+    'bottom' : '-50px',
+  }, 250)
   
   $('.item_pic').mouseenter(function(){
-    $(this).find('.item_link').stop().slideDown(250);
+    /* $(this).find('.item_link').stop().slideDown(500); */
+    $(this).find('.item_link').stop().animate({
+      'bottom' : '20px',
+    }, 250)
   })//item_pic mouseenter
   
   $('.item_pic').mouseleave(function(){
-    $('.item_link').stop().slideUp(250);
+    /* $('.item_link').stop().slideUp(500); */
+    $('.item_link').stop().animate({
+      'bottom' : '-50px',
+    }, 250)
   })//item_pic mouseleave
+
+  /* animate (250) bottom */
 
   let tab = document.querySelectorAll ('.tab_menu li');
   let selectItem = document.querySelectorAll ('.select_set');
